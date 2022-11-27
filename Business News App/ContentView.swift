@@ -44,7 +44,7 @@ struct ContentView: View {
                         .padding(.leading, 20)
                         .padding(.top, 30)
                     
-                    Text("From TechCrunch Right Now")
+                    Text("Mentioning Apple")
                         .foregroundColor(.gray)
                         .padding(.leading, 20)
                     
@@ -78,6 +78,8 @@ struct ContentView: View {
                                                 Text("By \(article.author!)")
                                                     .padding(.top, 2)
                                                     .foregroundColor(Color.gray)
+                                                    .multilineTextAlignment(.leading)
+                                                    .bold()
                                                 
                                                 //Spacer()
                                             }
@@ -99,8 +101,14 @@ struct ContentView: View {
     }
     
     func fetchData() async {
+        /*
         guard let url = URL(string: "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=bcf851953bbb43b9b8cb414e79e4932a") else {
             print("Invalid URL")
+            return
+        }
+         */
+        
+        guard let url = URL(string: "https://newsapi.org/v2/everything?q=apple&from=2022-11-26&to=2022-11-26&sortBy=popularity&apiKey=bcf851953bbb43b9b8cb414e79e4932a") else {
             return
         }
         
