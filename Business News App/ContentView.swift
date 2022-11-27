@@ -7,15 +7,61 @@
 
 import SwiftUI
 
+struct News: Hashable, Codable {
+    var status:String
+    var totalResults:Int
+    var articles:[Article]?
+}
+
+struct Article: Hashable, Codable {
+    var author:String?
+    var title:String?
+    var description:String?
+    var url:String?
+    var urlToImage:String?
+    var publishedAt:String?
+    var content:String?
+}
+
 struct ContentView: View {
+    
+    @State private var articles = [Article]()
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+      
+        NavigationView {
+            List(articles, id:\.self) {
+                article in
+                VStack(alignment: .leading) {
+                    Text(article.title!)
+                    Text(article.author!)
+                        .bold()
+                }
+            }
         }
-        .padding()
+        .navigationTitle("Headlines")
+        .task {
+            await fetchData()
+        }
+    }
+    
+    func fetchData() async {
+        guard let url = URL(string: "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=bcf851953bbb43b9b8cb414e79e4932a") else {
+            print("Invalid URL")
+            return
+        }
+        
+        do {
+            let (data, _) = try await URLSession.shared.data(from: url)
+            
+            if let news = try? JSONDecoder().decode(News.self, from: data) {
+                self.articles = news.articles!
+            }
+        }
+        catch {
+            print("Cannot parse JSON")
+            
+        }
     }
 }
 
