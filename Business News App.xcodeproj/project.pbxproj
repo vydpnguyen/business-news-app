@@ -11,6 +11,7 @@
 		63B408F429341B7800A0D9EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B408F329341B7800A0D9EB /* ContentView.swift */; };
 		63B408F629341B7900A0D9EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63B408F529341B7900A0D9EB /* Assets.xcassets */; };
 		63B408FA29341B7900A0D9EB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63B408F929341B7900A0D9EB /* Preview Assets.xcassets */; };
+		63B40901293421D500A0D9EB /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B40900293421D500A0D9EB /* ImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		63B408F529341B7900A0D9EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63B408F729341B7900A0D9EB /* Business_News_App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Business_News_App.entitlements; sourceTree = "<group>"; };
 		63B408F929341B7900A0D9EB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		63B40900293421D500A0D9EB /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				63B408F129341B7800A0D9EB /* Business_News_App.swift */,
 				63B408F329341B7800A0D9EB /* ContentView.swift */,
+				63B40900293421D500A0D9EB /* ImageView.swift */,
 				63B408F529341B7900A0D9EB /* Assets.xcassets */,
 				63B408F729341B7900A0D9EB /* Business_News_App.entitlements */,
 				63B408F829341B7900A0D9EB /* Preview Content */,
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63B40901293421D500A0D9EB /* ImageView.swift in Sources */,
 				63B408F429341B7800A0D9EB /* ContentView.swift in Sources */,
 				63B408F229341B7800A0D9EB /* Business_News_App.swift in Sources */,
 			);
