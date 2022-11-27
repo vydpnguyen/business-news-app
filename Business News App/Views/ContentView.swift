@@ -7,22 +7,6 @@
 
 import SwiftUI
 
-struct News: Hashable, Codable {
-    var status:String
-    var totalResults:Int
-    var articles:[Article]?
-}
-
-struct Article: Hashable, Codable {
-    var author:String?
-    var title:String?
-    var description:String?
-    var url:String?
-    var urlToImage:String?
-    var publishedAt:String?
-    var content:String?
-}
-
 struct ContentView: View {
     
     @State private var articles = [Article]()
@@ -101,13 +85,16 @@ struct ContentView: View {
     }
     
     func fetchData() async {
+        
+        // TechCrunch headlines
         /*
         guard let url = URL(string: "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=bcf851953bbb43b9b8cb414e79e4932a") else {
             print("Invalid URL")
             return
         }
-         */
+        */
         
+        // Apple headlines
         guard let url = URL(string: "https://newsapi.org/v2/everything?q=apple&from=2022-11-26&to=2022-11-26&sortBy=popularity&apiKey=bcf851953bbb43b9b8cb414e79e4932a") else {
             return
         }
